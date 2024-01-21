@@ -2,7 +2,7 @@
 const express = require('express');
 const session = require('express-session');
 const app = express();
-const port = 3000;
+const port = 4000;
 
 // Indstil visningssystemet (EJS)
 app.set('view engine', 'ejs');
