@@ -71,15 +71,15 @@
 <body>
   <h1>Velkommen <%= username %>!</h1>
 
-  <% if (req.session.orders && req.session.orders.length > 0) { %>
+  <% if (orders && orders.length > 0) { %>
     <h2>Dine opgaver:</h2>
     <ul>
-      <% req.session.orders.forEach((order, index) => { %>
+      <% orders.forEach((order, index) => { %>
         <li>
           <p><strong><%= order.username %></strong> har bestilt:</p>
           <ul>
             <% order.items.forEach(item => { %>
-              <li><%= item.name %> - <%= item.price %>kr</li>
+              <li><%= item.name %></li>
             <% }); %>
           </ul>
           <form action="/completeOrder" method="post">
