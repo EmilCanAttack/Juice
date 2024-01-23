@@ -17,11 +17,12 @@
       align-items: center;
       justify-content: center;
       min-height: 100vh;
+      background: url('/billeder/bmarble.webp') center/cover no-repeat;
     }
 
     h1 {
       text-align: center;
-      color: #FF69B4; /* Pink overskriftsfarve */
+      color: #FFF; /* Pink overskriftsfarve */
     }
 
     ul {
@@ -45,13 +46,20 @@
 
     li span {
       margin-right: 8px;
-      color: #333; /* Sort tekstfarve */
+      color: #FFF; /* Sort tekstfarve */
     }
 
     a {
       text-align: center;
       margin-top: 20px;
-      color: #FF69B4; /* Pink tekstfarve */
+      color: #FFF; /* Pink tekstfarve */
+      text-decoration: none;
+    }
+
+    p {
+      text-align: center;
+      margin-top: 20px;
+      color: #FFF; /* Pink tekstfarve */
       text-decoration: none;
     }
 
@@ -78,10 +86,10 @@
       <% }); %>
     </ul>
   <% } else { %>
-    <p>Ingen ordrer klar til afhentning endnu.</p>
+    <p>Ingen ordrer er klar til afhentning endnu.</p>
   <% } %>
 
-  <a href="/home" style="color: #FF69B4;">Stadig sulten? Vend tilbage og bestil noget mere</a>
+  <a href="/home" style="color: #FFF;">Stadig sulten? Vend tilbage og bestil noget mere</a>
 </body>
 
 </html>
