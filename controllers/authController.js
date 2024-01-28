@@ -73,20 +73,16 @@ router.get('/workerhome', isLoggedIn, (req, res) => {
 
 // Behandl tilføjelse til kurv-anmodningen
 router.post('/addToCart', isLoggedIn, (req, res) => {
-  const { addToCart } = req.body;
-  const itemName = req.body[addToCart];
-  const itemPrice = getPrice(itemName);
-  const cartItem = { name: itemName, price: itemPrice };
-
-  req.session.cart = req.session.cart || [];
-  req.session.cart.push(cartItem);
-
-  // Opdater ordrerne i sessionen
-  req.session.orders = req.session.orders || [];
-
-  res.redirect('/home');
-});
+    const { addToCart } = req.body;
+    const itemName = req.body[addToCart];
+    const itemPrice = getPrice(itemName);
+    const cartItem = { name: itemName, price: itemPrice };
   
+    req.session.cart = req.session.cart || [];
+    req.session.cart.push(cartItem);
+  
+    res.redirect('/home');
+});  
 
 // Behandl bestillingsanmodningen
 router.post('/placeOrder', isLoggedIn, (req, res) => {
@@ -102,7 +98,6 @@ router.post('/placeOrder', isLoggedIn, (req, res) => {
 
   res.redirect('/home');
 });
-
 
 // Behandl "Færdig" knap-anmodningen
 router.post('/completeOrder', isLoggedIn, (req, res) => {

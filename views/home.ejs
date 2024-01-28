@@ -16,7 +16,6 @@
       align-items: center;
       justify-content: center;
       height: 100vh;
-      background: url('/billeder/bmarble.webp') center/cover no-repeat;
     }
 
     form {
@@ -49,7 +48,7 @@
     }
 
     button {
-      background-color: #000000; /* Pink knapfarve */
+      background-color: #FF69B4; /* Pink knapfarve */
       color: #FFF; /* Hvid tekstfarve */
       padding: 10px;
       border: none;
@@ -59,7 +58,7 @@
     }
 
     button:hover {
-      background-color: #1f1f1f; /* Lysere sort ved hover */
+      background-color: #E04593; /* Mørkere pink ved hover */
     }
 
     p {
@@ -98,7 +97,7 @@
 </head>
 <body>
   <form action="/addToCart" method="post">
-    <h1 style="color: #ffffff;">Velkommen <%= username %>!</h1>
+    <h1 style="color: #FF69B4;">Velkommen <%= username %>!</h1>
     <p>Vælg dine bestillinger:</p>
 
     <label for="salad">SALAD BOWLS:</label>
@@ -125,7 +124,7 @@
   </form>
 
   <div style="text-align: center;"> <!-- Centeret tekst -->
-    <h2 style="color: #FFF;">Din kurv:</h2>
+    <h2 style="color: #333;">Din kurv:</h2>
     <form action="/placeOrder" method="post">
       <% if (cart && cart.length > 0) { %>
         <ul>
@@ -133,7 +132,7 @@
             <li><%= item.name %> - <%= item.price %>kr</li>
           <% }); %>
         </ul>
-        <button type="submit" style="background-color: #000000;">Bestil</button>
+        <button type="submit" style="background-color: #FF69B4;">Bestil</button>
       <% } else { %>
         <p>Din kurv er tom.</p>
       <% } %>
@@ -142,10 +141,10 @@
 
   <!-- Knappen for at tjekke ordrestatus -->
   <form class="check-status-btn" action="/orderstatus" method="get">
-    <button type="submit" style="background-color: #000000;">Tjek om din ordre er klar til afhentning</button>
+    <button type="submit" style="background-color: #FF69B4;">Tjek om din ordre er klar til afhentning</button>
   </form>
 
   <!-- Log ud knap -->
-  <a href="/frontpage" style="color: #FFF; margin-top: 20px; text-decoration: none;">Log ud</a>
+  <a href="/frontpage" style="color: #FF69B4; margin-top: 20px; text-decoration: none;">Log ud</a>
 </body>
 </html>
