@@ -68,7 +68,7 @@
     <ul>
       <% completedOrders.forEach(order => { %>
         <li>
-          <span><%= order.username %>s bestilling:</span>
+          <span><strong><%= order.username %></strong>s bestilling:</span>
           <ul>
             <% order.items.forEach(item => { %>
               <li><%= item.name %></li>
@@ -81,7 +81,7 @@
     <p>Ingen ordrer klar til afhentning endnu.</p>
   <% } %>
 
-  <a href="/home" style="color: #FF69B4;">Sulten? Bestil noget mere</a>
+  <a href="/home" style="color: #FF69B4;">Stadig sulten? Bestil noget mere</a>
 </body>
 
 </html>
